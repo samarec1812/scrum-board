@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db:
+    restart: always
+    image: postgres:13.3
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "scrum-board-db"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "qwerty"
+    ports:
+      - "5439:5432"
