@@ -1,5 +1,15 @@
 version: "3.9"
 services:
+  scrum-board:
+    container_name: scrum_board_backend
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    depends_on:
+      - db
+    env_file: .env
+
   db:
     restart: always
     image: postgres:13.3
